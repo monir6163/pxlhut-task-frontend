@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
-import { CookiesProvider } from "next-client-cookies/server";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
@@ -35,12 +34,10 @@ export default function RootLayout({
       >
         <StoreProvider>
           <ThemeProvider attribute="class" defaultTheme="system">
-            <CookiesProvider>
-              <Navbar />
-              <NextTopLoader />
-              {children}
-              <Toaster position="top-center" richColors closeButton />
-            </CookiesProvider>
+            <Navbar />
+            <NextTopLoader />
+            {children}
+            <Toaster position="top-center" richColors closeButton />
           </ThemeProvider>
         </StoreProvider>
       </body>
