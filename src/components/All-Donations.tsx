@@ -26,7 +26,7 @@ export default function AllDonations() {
 
   if (isLoading) return <div className="text-center">Loading...</div>;
   return (
-    <div>
+    <div className="text-black">
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>

@@ -43,7 +43,7 @@ export default function DonationPayments() {
   };
 
   return (
-    <div>
+    <div className="">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white shadow-md rounded-xl p-6 w-full max-w-md space-y-6"

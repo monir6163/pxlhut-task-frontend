@@ -25,7 +25,7 @@ export default function ProfileData() {
   }, [isSuccess, data]);
   if (isLoading) return <div>Loading...</div>;
   return (
-    <div>
+    <div className="text-black">
       <h1 className="text-2xl font-bold mb-4">Profile</h1>
       <div className="bg-white p-4 rounded shadow">
         <h2 className="text-xl font-semibold">User Information</h2>
