@@ -44,7 +44,7 @@ export default function Navbar() {
     checkAuth();
     const interval = setInterval(checkAuth, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [cookies]);
 
   const handleLogout = async () => {
     try {
