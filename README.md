@@ -21,18 +21,16 @@ To get started with the project, follow these steps:
 
 1. Clone the repository:
 
-1. Clone the repository:
-
    ```bash
    git clone https://github.com/monir6163/pxlhut-task-frontend.git
    cd pxlhut-task-frontend
    ```
 
-1. Install dependencies:
+2. Install dependencies:
    ```bash
     npm install
    ```
-1. Run the development server:
+3. Run the development server:
 
    ```bash
    npm run dev
