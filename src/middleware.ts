@@ -5,7 +5,6 @@ const authPublicPaths = ["/auth/login", "/auth/register"];
 
 export async function middleware(request: NextRequest) {
   const isAuthenticated = request.cookies.get("is_auth")?.value;
-  console.log("Middleware is running", isAuthenticated);
   if (isAuthenticated) {
     if (
       authPublicPaths.some((path) => request.nextUrl.pathname.startsWith(path))

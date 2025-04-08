@@ -36,6 +36,7 @@ export default function Navbar() {
   useEffect(() => {
     const checkAuth = () => {
       const authCookie = Cookies.get("is_auth");
+      console.log("Auth cookie:", authCookie);
       setIsAuth(authCookie ? JSON.parse(authCookie) : false);
     };
 
