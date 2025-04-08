@@ -1,6 +1,11 @@
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
+import { Toaster } from "sonner";
 import "./globals.css";
+import StoreProvider from "./StoreProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <StoreProvider>
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <Navbar />
+            <NextTopLoader />
+            {children}
+            <Toaster position="top-center" richColors closeButton />
+          </ThemeProvider>
+        </StoreProvider>
       </body>
     </html>
   );
