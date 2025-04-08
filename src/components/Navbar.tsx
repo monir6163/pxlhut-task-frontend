@@ -2,7 +2,7 @@
 "use client";
 
 import { useGetUserQuery, useLogoutUserMutation } from "@/lib/services/auth";
-import Cookies from "js-cookie";
+import { useCookies } from "next-client-cookies";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -25,6 +25,7 @@ export default function Navbar() {
   const [isAuth, setIsAuth] = useState<boolean | null>(null);
   const [user, setUser] = useState<User>({});
   const { data, isSuccess, isLoading } = useGetUserQuery({});
+  const cookies = useCookies();
   useEffect(() => {
     if (data && isSuccess) {
       setUser(data?.data);
@@ -35,7 +36,7 @@ export default function Navbar() {
   const { push } = useRouter();
   useEffect(() => {
     const checkAuth = () => {
-      const authCookie = Cookies.get("is_auth");
+      const authCookie = cookies.get("is_auth");
       console.log("Auth cookie:", authCookie);
       setIsAuth(authCookie ? JSON.parse(authCookie) : false);
     };
